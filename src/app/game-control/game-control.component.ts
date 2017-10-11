@@ -15,17 +15,21 @@ export class GameControlComponent implements OnInit {
   }
 
   start(): void {
-    let count = 1;
+    let count = this.randomNumber();
     console.log('start');
     this.ref = setInterval(() => {
       this.event.emit(count);
-      count++;
-    }, 1000);
+      count = this.randomNumber();
+    }, 500);
   }
 
   stop(): void {
     console.log('stop');
     clearInterval(this.ref);
+  }
+
+  private randomNumber(): number {
+    return Math.round(1 - 0.5 + Math.random() * (2147483646 - 1 + 1));
   }
 
 }
