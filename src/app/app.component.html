@@ -1,1 +1,13 @@
-core component
+<div class="container">
+  <div class="row">
+    <app-game-control class="center-block" (event)="onEvent($event)"></app-game-control>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <app-odd class="center-block" *ngFor="let odd of odds" [number]=odd></app-odd>
+    </div>
+    <div class="col-xs-6">
+      <app-even class="center-block" *ngFor="let even of evens" [number]=even></app-even>
+    </div>
+  </div>
+</div>

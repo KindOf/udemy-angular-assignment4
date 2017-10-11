@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  odds: number[] = [];
+  evens: number[] = [];
+
+  onEvent(e) {
+    if (e % 2 === 0) {
+      this.evens.push(e);
+    } else {
+      this.odds.push(e);
+    }
+  }
 }
